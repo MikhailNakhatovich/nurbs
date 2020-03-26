@@ -29,7 +29,7 @@ def init_figure(fig_size):
     return fig
 
 
-def draw_base(degree, points, lerp_0):
+def draw_base(degree, points, lerp_0, center):
     for i in range(degree):
         plt.plot(points[i:i + 2, 0], points[i:i + 2, 1], **link_line_style)
     for i in range(degree + 1):
@@ -80,7 +80,7 @@ def main(points, center, delta, outfile, out_size, fps):
     for i, t in enumerate(ts):
         progress(i, total)
         fig = init_figure((out_size[0] / 100, out_size[1] / 100))
-        draw_base(degree, points, lerp_0)
+        draw_base(degree, points, lerp_0, center)
 
         new_point = eval_point(degree, lerp_0, t)
         eval_points = np.concatenate((eval_points, [affine(center, new_point[:2], 1. / new_point[2])]))

@@ -4,7 +4,7 @@ Simple visualization of the recursive algorithm for NURBS.
 
 ## Grabbing the code
 ```
-git clone https://gitlab.com/...
+git clone https://github.com/...
 ```
 
 ## Setup requirements
